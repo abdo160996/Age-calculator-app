@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Frontend Mentor | Age calculator app</title>
+
+  </head>
+  <body class="bg-gray-200 dark:bg-gray-900 font-popp">
+    <div class="card p-8 dark:bg-gray-800 dark:text-neutral-100 bg-slate-50 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl rounded-ee-[100px] sm:w-[600px] md:w-[700px]">
+      <form action="" class="" novalidate>
+        <div class="flex">
+          <div class="input-group flex flex-col mr-8">
+            <label for="day" class="font-bold text-xs">Day</label>
+            <input type="text" required name="day" placeholder="DD" id="day" class="p-2 mt-1 w-20 md:w-32 h-14 outline-none dark:text-gray-500 border border-gray-300 rounded-md font-bold text-xl" />
+            <div class="error text-light-red text-xs italic hidden">this field is required</div>
+          </div>
+          <div class="input-group flex flex-col mr-8">
+            <label for="month" class="font-bold text-xs">Month</label>
+            <input type="text" required name="month" placeholder="MM" id="month" class="p-2 mt-1 w-20 md:w-32 h-14 outline-none border dark:text-gray-500 border-gray-300 rounded-md font-bold text-xl" />
+            <div class="error text-light-red text-xs italic hidden">this field is required</div>
+          </div>
+          <div class="input-group flex flex-col">
+            <label for="year" class="font-bold text-xs">Year</label>
+            <input type="text" required name="year"  placeholder="YY" id="year" class="p-2 mt-1 w-20 md:w-32 h-14 outline-none border dark:text-gray-500 border-gray-300 rounded-md font-bold text-xl" />
+            <div class="error text-light-red text-xs italic hidden">this field is required</div>
+          </div>
+        </div>
+        <div class="sep h-0.5 my-10 bg-slate-200 relative">
+          <label
+            for="convert"
+            class="flex justify-center cursor-pointer rounded-full w-14 h-14 bg-purple hover:bg-slate-900 transition-['background'] duration-300 absolute right-1/2 sm:right-16 translate-x-1/2 -translate-y-1/2"
+          >
+            <img src="./assets/images/icon-arrow.svg" class="w-10" alt="" />
+            <button type="submit" id="convert" class="opacity-0"></button>
+          </label>
+        </div>
+      </form>
+
+      <div class="result my-10">
+        <div class="years mb-4 font-extrabold italic text-5xl sm:text-6xl"><span class="text-purple">--</span> years</div>
+
+        <div class="months mb-4 font-extrabold italic text-5xl sm:text-6xl"><span class="text-purple">--</span> months</div>
+
+        <div class="days mb-4 font-extrabold italic text-5xl sm:text-6xl"><span class="text-purple">--</span> days</div>
+      </div>
+       <div class="rounded-xl rounded-ee-[100px] w-16 h-16 ml-auto bg-neutral-100 shadow-lg dark:bg-purple dark:shadow-gray-700" id="theme-switch">
+      <img src="./assets/images/dark.png" class="w-14" alt="">
+  </div>
+    </div>
+   
+    <div class="attribution text-center font-popp font-bold text-neutral-100 text-sm">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" class="text-purple" target="_blank">Frontend Mentor</a>. Coded by <a href="#" class="text-purple">Abdo</a>.</div>
+    
+
+    <script src="main.js"></script>
+    <script src="darkMode.js"></script>
+  </body>
+</html>
