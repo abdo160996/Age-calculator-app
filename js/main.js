@@ -60,12 +60,12 @@ function checkDay() {
         return false
     }
     else if (dayValue < 1 || dayValue > 31) {
-        console.log(dayValue)
+  
         invalid(dayInput, "Must be a valid day!")
         return false
     }
     else {
-        console.log(dayValue)
+   
         valid(dayInput)
         return true
     }
@@ -132,6 +132,18 @@ function checkFullDate() {
     }
 }
 
+function animate(input,limit) {
+    let counter = 1
+      let id = setInterval(() => {
+          if (counter === limit) {
+              clearInterval(id)
+          }
+          input.innerHTML = counter
+          counter += 1
+      },50)
+  }
+  
+
 function convertDate() {
 
     let dayValue = dayInput.value.trim()
@@ -140,9 +152,13 @@ function convertDate() {
     let fullDate = `${monthValue}/${dayValue}/${yearValue}`;
     let date = new Date(fullDate)
     let currentDate = new Date()
-    yearsOutput.innerHTML = currentDate.getFullYear() - date.getFullYear()
-    monthsOutput.innerHTML = Math.abs(currentDate.getMonth() - date.getMonth())
-    daysOutput.innerHTML = Math.abs(currentDate.getDate() - date.getDate())
-  
-
+    let inYears = currentDate.getFullYear() - date.getFullYear()
+    let inMonths = Math.abs(currentDate.getMonth() - date.getMonth())
+    let inDays  = Math.abs(currentDate.getDate() - date.getDate())
+    animate(yearsOutput,inYears)
+    animate(monthsOutput,inMonths)
+    animate(daysOutput,inDays)
+    
+    
 }
+
