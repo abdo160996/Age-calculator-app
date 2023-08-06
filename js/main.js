@@ -152,13 +152,31 @@ function convertDate() {
     let dayValue = dayInput.value.trim()
     let monthValue = monthInput.value.trim()
     let yearValue = yearInput.value.trim()
-    let fullDate = `${monthValue}/${dayValue}/${yearValue}`;
 
-    let {years,months,days} =intervalToDuration({start: new Date(fullDate), end: new Date()}) 
-    console.log(intervalToDuration({start: new Date(fullDate), end: new Date()}) )
-    animate(yearsOutput,years)
-    animate(monthsOutput,months)
-    animate(daysOutput,days)
+    let fullDate = `${monthValue}/${dayValue}/${yearValue}`;
+    let date = new Date(fullDate);
+    let currentDate = new Date();
+
+    let yearDiff = currentDate.getFullYear() - date.getFullYear();
+    let monthDiff = currentDate.getMonth() - date.getMonth();
+    let dayDiff = currentDate.getDate() - date.getDate();
+    // Adjust for negative differences
+    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        yearDiff -= 1;
+    }
+
+    if (monthDiff < 0) {
+        monthDiff = 12 + monthDiff;
+    }
+
+    if (dayDiff < 0) {
+        let lastMonth = (currentDate.getMonth() + 11) % 12;
+        let daysInLastMonth = new Date(currentDate.getFullYear(), lastMonth + 1, 0).getDate();
+        dayDiff = daysInLastMonth + dayDiff;
+    }
+    animate(yearsOutput,yearDiff)
+    animate(monthsOutput,monthDiff)
+    animate(daysOutput,dayDiff)
     
     
 }
