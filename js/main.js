@@ -1,4 +1,4 @@
- const intervalToDuration =  require('date-fns')
+import {intervalToDuration} from 'data-fns'
 
 const convertBtn = document.querySelector("#convert")
 const dayInput = document.querySelector("#day")
