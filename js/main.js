@@ -1,4 +1,4 @@
-import {intervalToDuration} from './no'
+import {intervalToDuration} from 'date-fns'
 
 const convertBtn = document.querySelector("#convert")
 const dayInput = document.querySelector("#day")
