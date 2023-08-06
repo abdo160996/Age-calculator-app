@@ -1,3 +1,5 @@
+ const intervalToDuration =  require('date-fns')
+
 const convertBtn = document.querySelector("#convert")
 const dayInput = document.querySelector("#day")
 const monthInput = document.querySelector("#month")
@@ -153,14 +155,12 @@ function convertDate() {
     let monthValue = monthInput.value.trim()
     let yearValue = yearInput.value.trim()
     let fullDate = `${monthValue}/${dayValue}/${yearValue}`;
-    let date = new Date(fullDate)
-    let currentDate = new Date()
-    let inYears = currentDate.getFullYear() - date.getFullYear()
-    let inMonths = Math.abs(currentDate.getMonth() - date.getMonth())
-    let inDays  = Math.abs(currentDate.getDate() - date.getDate())
-    animate(yearsOutput,inYears)
-    animate(monthsOutput,inMonths)
-    animate(daysOutput,inDays)
+
+    let {years,months,days} =intervalToDuration({start: new Date(fullDate), end: new Date()}) 
+
+    animate(yearsOutput,years)
+    animate(monthsOutput,months)
+    animate(daysOutput,days)
     
     
 }
