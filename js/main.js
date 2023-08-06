@@ -149,7 +149,7 @@ function animate(input,limit) {
 
 function convertDate() {
 
-// let s =formatDuration(intervalToDuration({start: parseISO('1996-09-16T00:00:00'), end: new Date()}), {format: ['years', 'months', 'days']})
+
 
     let dayValue = dayInput.value.trim()
     let monthValue = monthInput.value.trim()
