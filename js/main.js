@@ -1,4 +1,4 @@
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault").default;
+import {intervalToDuration} from "date-fns";
 const convertBtn = document.querySelector("#convert")
 const dayInput = document.querySelector("#day")
 const monthInput = document.querySelector("#month")
