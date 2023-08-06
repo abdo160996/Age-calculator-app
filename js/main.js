@@ -154,7 +154,7 @@ function convertDate() {
     let fullDate = `${monthValue}/${dayValue}/${yearValue}`;
 
     let {years,months,days} =intervalToDuration({start: new Date(fullDate), end: new Date()}) 
-
+    console.log(intervalToDuration({start: new Date(fullDate), end: new Date()}) )
     animate(yearsOutput,years)
     animate(monthsOutput,months)
     animate(daysOutput,days)
