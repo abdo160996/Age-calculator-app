@@ -1,11 +1,10 @@
-import {intervalToDuration} from 'data-fns'
+import {intervalToDuration} from './no'
 
 const convertBtn = document.querySelector("#convert")
 const dayInput = document.querySelector("#day")
 const monthInput = document.querySelector("#month")
 const yearInput = document.querySelector("#year")
 const formInputs = document.querySelectorAll("form input")
-const errorDiv = document.querySelectorAll(".error")
 const yearsOutput = document.querySelector(".years span")
 const monthsOutput = document.querySelector(".months span")
 const daysOutput = document.querySelector(".days span")
