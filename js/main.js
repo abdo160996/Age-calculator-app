@@ -94,7 +94,7 @@ function checkYear() {
         invalid(yearInput, "Must be a number!")
         return false
     }
-    else if (yearValue < 1000 || yearValue > currentYear) {
+    else if (yearValue > currentYear) {
         invalid(yearInput, "Must be a valid year!")
         return false
     }
@@ -108,7 +108,7 @@ function checkYear() {
 
 function checkFullDate() {
     let dayValue = +dayInput.value.trim()
-    let monthValue = +monthInput.value.trim()
+    let monthValue = +monthInput.value.trim().replace("0","")
     let yearValue = +yearInput.value.trim()
     const monthsOf30 = [4, 6, 9, 11]
 
@@ -135,12 +135,13 @@ function checkFullDate() {
 function animate(input,limit) {
     let counter = 1
       let id = setInterval(() => {
-          if (counter === limit) {
+         
+          input.innerHTML = counter
+           if (counter === limit) {
               clearInterval(id)
           }
-          input.innerHTML = counter
           counter += 1
-      },50)
+      },20)
   }
   
 
