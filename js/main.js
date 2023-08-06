@@ -153,13 +153,12 @@ function convertDate() {
     let monthValue = monthInput.value.trim()
     let yearValue = yearInput.value.trim()
 
-    let fullDate = `${monthValue}/${dayValue}/${yearValue}`;
-    let date = new Date(fullDate);
+    let userDate = new Date(`${monthValue}/${dayValue}/${yearValue}`);
     let currentDate = new Date();
 
-    let yearDiff = currentDate.getFullYear() - date.getFullYear();
-    let monthDiff = currentDate.getMonth() - date.getMonth();
-    let dayDiff = currentDate.getDate() - date.getDate();
+    let yearDiff = currentDate.getFullYear() - userDate.getFullYear();
+    let monthDiff = currentDate.getMonth() - userDate.getMonth();
+    let dayDiff = currentDate.getDate() - userDate.getDate();
     // Adjust for negative differences
     if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
         yearDiff -= 1;
