@@ -141,7 +141,7 @@ function animate(input,limit) {
               clearInterval(id)
           }
           counter += 1
-      },10)
+      },20)
   }
   
 
