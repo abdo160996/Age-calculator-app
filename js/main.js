@@ -155,28 +155,31 @@ function convertDate() {
 
     let userDate = new Date(`${monthValue}/${dayValue}/${yearValue}`);
     let currentDate = new Date();
+let {years,months,days}=intervalToDuration({
+            start: currentDate,
+            end: userDate,
+          });
+    // let yearDiff = currentDate.getFullYear() - userDate.getFullYear();
+    // let monthDiff = currentDate.getMonth() - userDate.getMonth();
+    // let dayDiff = currentDate.getDate() - userDate.getDate();
+    // // Adjust for negative differences
+    // if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+    //     yearDiff -= 1;
+    // }
 
-    let yearDiff = currentDate.getFullYear() - userDate.getFullYear();
-    let monthDiff = currentDate.getMonth() - userDate.getMonth();
-    let dayDiff = currentDate.getDate() - userDate.getDate();
-    // Adjust for negative differences
-    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-        yearDiff -= 1;
-    }
+    // if (monthDiff < 0) {
+    //     monthDiff = 12 + monthDiff;
+    // }
 
-    if (monthDiff < 0) {
-        monthDiff = 12 + monthDiff;
-    }
-
-    if (dayDiff < 0) {
-        let lastMonth = (currentDate.getMonth() + 11) % 12;
-        let daysInLastMonth = new Date(currentDate.getFullYear(), lastMonth + 1, 0).getDate();
-        dayDiff = daysInLastMonth + dayDiff;
-    }
-    console.log({yearDiff,monthDiff,dayDiff})
-    animate(yearsOutput,yearDiff)
-    animate(monthsOutput,monthDiff)
-    animate(daysOutput,dayDiff)
+    // if (dayDiff < 0) {
+    //     let lastMonth = (currentDate.getMonth() + 11) % 12;
+    //     let daysInLastMonth = new Date(currentDate.getFullYear(), lastMonth + 1, 0).getDate();
+    //     dayDiff = daysInLastMonth + dayDiff;
+    // }
+    // console.log({yearDiff,monthDiff,dayDiff})
+    animate(yearsOutput,years)
+    animate(monthsOutput,months)
+    animate(daysOutput,days)
     
     
 }
