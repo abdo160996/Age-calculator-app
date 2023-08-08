@@ -173,6 +173,7 @@ function convertDate() {
         let daysInLastMonth = new Date(currentDate.getFullYear(), lastMonth + 1, 0).getDate();
         dayDiff = daysInLastMonth + dayDiff;
     }
+    console.log({yearDiff,monthDiff,dayDiff})
     animate(yearsOutput,yearDiff)
     animate(monthsOutput,monthDiff)
     animate(daysOutput,dayDiff)
