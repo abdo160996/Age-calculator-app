@@ -1,4 +1,4 @@
-
+import dateFns from 'https://cdn.skypack.dev/date-fns';
 const convertBtn = document.querySelector("#convert")
 const dayInput = document.querySelector("#day")
 const monthInput = document.querySelector("#month")
@@ -155,7 +155,7 @@ function convertDate() {
 
     let userDate = new Date(`${monthValue}/${dayValue}/${yearValue}`);
     let currentDate = new Date();
-let {years,months,days}=intervalToDuration({
+let {years,months,days}=dateFns.intervalToDuration({
             start: currentDate,
             end: userDate,
           });
